@@ -1,0 +1,24 @@
+CC = gcc
+CFLAGS = -Wall -g -m32
+LDFLAGS =
+SRC = main.c input.c
+
+-include .depend
+
+default:
+	make -f makefile16 depend
+	make -f makefile16 editor
+
+editor: .depend $(SRC:.c=.o)
+	$(CC) $(CFLAGS) -o editor $(SRC:.c=.o)
+
+clean:
+	rm -rf main main.o input.o utils.o .depend
+
+install: default
+	cp editor ~/editor
+	chmod =555 ~/editor
+
+depend: $(SRC)
+	rm -f ./.depend
+	$(CC) -MM $(SRC) > .depend

@@ -1,0 +1,5 @@
+1.2) Garnicht, da sie sich nicht ändern
+
+1.3) hinter der main:*** zeile ein ' input.o' ergänzen
+
+1.5) Es wird überprüft ob clean oder install aktuell sind, und die clean bzw install operation evtl nicht ausgeführt. Lösung: .PHONY
