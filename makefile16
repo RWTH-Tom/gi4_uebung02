@@ -13,7 +13,7 @@ editor: .depend $(SRC:.c=.o)
 	$(CC) $(CFLAGS) -o editor $(SRC:.c=.o)
 
 clean:
-	rm -rf main main.o input.o utils.o .depend
+	rm -rf editor main.o input.o utils.o .depend
 
 install: default
 	cp editor ~/editor
